@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GavanKennedy_S00180333;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,12 +14,15 @@ namespace GavanKennedy_S00180333
         public string Name { get; set; }
         public string OperatingSystem { get; set; }
         public string OsImage { get; set; }
+
+      
+
         public string PhoneImage { get; set; }
         public double Price { get; set; }
-
-        public void IncreasePrice()
+        
+        public void IncreasePrice(double amount)
         {
-
+            amount = (Price * 0.10*11);
         }
     }
     public class PhoneData:DbContext

@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GavanKennedy_S00180333"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+
+        <DataTemplate x:Key="ExamTemplate">
+            <StackPanel Orientation="Vertical" Margin="5">
+                <Image Source="{Binding OsImage}" Width="75"/>
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" Margin="5" FontSize="12"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="LBXPhones" Grid.Column="0" Height="340" Width="350" HorizontalAlignment="Center" ItemTemplate="{StaticResource ExamTemplate}" Margin="10,70,36.8,10"/>
+        <TextBlock x:Name="TBLKPrice" Grid.Column="1" VerticalAlignment="Top" Height="100" Background="AliceBlue"/>
+        <Image x:Name="IMGPhone" Grid.Column="1" VerticalAlignment="Center" Height="342" Margin="0.2,-96,-0.4,174"/>
+        <Button Content="PressMe" HorizontalAlignment="Left" Margin="169,10,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click"/>
     </Grid>
 </Window>
