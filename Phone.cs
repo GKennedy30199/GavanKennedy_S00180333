@@ -22,7 +22,7 @@ namespace GavanKennedy_S00180333
         
         public void IncreasePrice(double amount)
         {
-            amount = (Price * 0.10*11);
+            Price += amount * (1.1);
         }
     }
     public class PhoneData:DbContext
